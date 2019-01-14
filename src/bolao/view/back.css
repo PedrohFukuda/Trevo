@@ -1,0 +1,6 @@
+.root{
+.bodybg{
+     -fx-background-image: url('Clover.jpg');
+     -fx-background-size: 100% 100%;    
+  }
+}

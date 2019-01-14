@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@caspian.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bolao.controller.EditUserController">
+    <children>
+        <Button fx:id="returnBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#previousScreen" prefHeight="31.0" prefWidth="58.0" text="Voltar" />
+        <Label alignment="CENTER" layoutX="228.0" layoutY="45.0" prefHeight="42.0" prefWidth="225.0" text="Editar Senha" textAlignment="CENTER">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <Separator layoutX="5.0" layoutY="98.0" prefHeight="6.0" prefWidth="700.0" />
+        <Label layoutX="21.0" layoutY="118.0" text="Digite o nome de usuario:" />
+        <TextField fx:id="userTF" layoutX="21.0" layoutY="137.0" prefHeight="26.0" prefWidth="225.0" />
+        <Button fx:id="clearSearchBtn" layoutX="24.0" layoutY="185.0" mnemonicParsing="false" onAction="#clearSearch" text="Limpar busca" />
+        <Button fx:id="searchPlyrBtn" layoutX="127.0" layoutY="185.0" mnemonicParsing="false" onAction="#searchUser" text="Buscar" />
+        <Button fx:id="selectPlayerBtn" layoutX="193.0" layoutY="185.0" mnemonicParsing="false" onAction="#selectUser" text="Selecionar" />
+        <ListView fx:id="showUserLV" layoutX="11.0" layoutY="218.0" prefHeight="291.0" prefWidth="277.0" />
+        <Label layoutX="313.0" layoutY="126.0" prefHeight="20.0" prefWidth="108.0" text="Nova Senha:">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <TextField fx:id="newPassTF" layoutX="425.0" layoutY="125.0" />
+        <Separator layoutX="286.0" layoutY="101.0" orientation="VERTICAL" prefHeight="405.0" prefWidth="4.0" />
+        <Button fx:id="deleteBtn" layoutX="400.0" layoutY="173.0" mnemonicParsing="false" onAction="#deleteUser" text="Deletar usuario" />
+        <Button fx:id="updateBtn" layoutX="525.0" layoutY="173.0" mnemonicParsing="false" onAction="#updateUser" text="Atualizar senha" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@caspian.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bolao.controller.ShowBetsController">
+    <children>
+        <Button fx:id="returnBtn" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#previousScreen" prefHeight="31.0" prefWidth="58.0" text="Voltar" />
+        <Label alignment="CENTER" layoutX="238.0" layoutY="23.0" prefHeight="42.0" prefWidth="234.0" text="Apostas do Jogo Atual" textAlignment="CENTER">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <Separator layoutY="86.0" prefHeight="4.0" prefWidth="800.0" />
+        <TableView fx:id="showPlayerTV" layoutY="141.0" prefHeight="383.0" prefWidth="800.0">
+            <columns>
+                <TableColumn fx:id="namesColumn" prefWidth="173.0" text="Nome" />
+                <TableColumn fx:id="betsColumn" prefWidth="220.0" text="Numeros Apostados" />
+                <TableColumn fx:id="remainingsColumn" prefWidth="231.0" text="Numeros Restantes" />
+                <TableColumn fx:id="paidColumn" prefWidth="75.0" text="Pago" />
+            </columns>
+        </TableView>
+        <Button fx:id="payBtn" layoutX="647.0" layoutY="98.0" mnemonicParsing="false" onAction="#confirmPayment" prefHeight="22.0" prefWidth="153.0" text="Confirmar Pagamento" />
+        <TextField fx:id="nameTF" layoutY="97.0" prefHeight="25.0" prefWidth="243.0" />
+        <Button fx:id="searchBets" layoutX="243.0" layoutY="99.0" mnemonicParsing="false" onAction="#search" text="Buscar" />
+        <Button fx:id="clearSearchBtn" layoutX="313.0" layoutY="99.0" mnemonicParsing="false" onAction="#clear" text="Limpar" />
+        <Button fx:id="deleteBtn" layoutX="527.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#dltBet" text="Apagar Aposta" />
+        <Button fx:id="editBtn" layoutX="427.0" layoutY="539.0" mnemonicParsing="false" onAction="#editBet" prefHeight="22.0" prefWidth="209.0" text="Atualizar Números da Aposta" />
+        <TextField fx:id="newNmbrsTF" layoutX="176.0" layoutY="537.0" prefHeight="25.0" prefWidth="243.0" />
+    </children>
+</AnchorPane>
