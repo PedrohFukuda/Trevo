@@ -3,8 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/trevoFinal_jar</output-path>
     <root id="archive" name="trevoFinal.jar">
       <element id="module-output" name="trevoFinal" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/itextpdf-5.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
