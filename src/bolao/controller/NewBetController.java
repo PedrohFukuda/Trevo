@@ -1,6 +1,5 @@
 package bolao.controller;
 
-import bolao.ConnectionFactory;
 import bolao.Manager;
 import bolao.model.Bet;
 import bolao.model.Player;
@@ -10,14 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class NewBetController implements Initializable {
     @FXML private Button returnBtn;
@@ -44,7 +37,6 @@ public class NewBetController implements Initializable {
 
         if (!aux.equals("") && aux.matches("[[0-9]+ ]+[ [0-9]+]") && player_ID != -1) {
             Bet bet = new Bet(player_ID, betsNumbersTF.getText());
-            System.out.println("ERERERERER" + bet.getRemaining());
             bet.registerNewBet();
             betsNumbersTF.clear();
             newBetMsg.setText("Nova Aposta Registrada Com Sucesso");

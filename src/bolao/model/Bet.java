@@ -242,13 +242,34 @@ public final class Bet{
     }
 
     public void confirmPayment(int b_ID) {
-        String sql = "UPDATE Bet SET paid = ? WHERE bet_ID = ?";
+        String p = "0";
         Connection conn = ConnectionFactory.connect();
+        String sql = "SELECT paid FROM Bet WHERE bet_ID = ?";
         PreparedStatement ps;
+        ResultSet rs;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, b_ID);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                p = rs.getString("paid");
+                System.out.println(p);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        sql = "UPDATE Bet SET paid = ? WHERE bet_ID = ?";
+
 
         try {
             ps = conn.prepareStatement(sql);
-            ps.setString(1, "1");
+            if (p.equals("1")) {
+                ps.setString(1, "0");
+            } else {
+                ps.setString(1, "1");
+            }
             ps.setInt(2, b_ID);
             ps.executeUpdate();
             conn.close();
