@@ -69,24 +69,16 @@ public class NewGameController implements Initializable {
                 }
                 int antID = g_ID - 1;
 
-                sql =   "SELECT * " +
-                        "FROM Bet " +
+                sql =   "UPDATE Bet " +
+                        "SET game_ID = ?, paid = ?, " +
+                        "remaining = numbers, remainingSize = originalSize " +
                         "WHERE game_ID = ?";
                 ps = conn.prepareStatement(sql);
-                ps.setInt(1, antID);
-                rs = ps.executeQuery();
-
-                Bet auxBet;
-                while (rs.next()){
-                    auxBet = new Bet(rs.getInt("player_ID"), rs.getString("numbers"));
-                    bets.add(auxBet);
-                }
-
-                sql =   "DELETE FROM Bet " +
-                        "WHERE game_ID != ?";
-                ps = conn.prepareStatement(sql);
-                ps.setInt(1, -1);
+                ps.setInt(1, g_ID);
+                ps.setInt(2, 0);
+                ps.setInt(3, antID);
                 ps.executeUpdate();
+
                 conn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(ReportsGenerator.class.getName()).log(Level.SEVERE, null, ex);
